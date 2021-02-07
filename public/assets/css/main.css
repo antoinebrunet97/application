@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+  color: rgb(2, 62, 88);
+  font-family: Arial;
+}
+
+#title {
+  text-align: center;
+  padding: 20px;
+}
+
+#paragraph {
+  padding: 20px;
+}
+
+#selectDiv {
+  padding: 20px;
+}
+
+#neighborhood {
+  background-color: black;
+  color: rgb(2, 62, 88);
+  font-family: Arial;
+}

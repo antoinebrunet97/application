@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Localisateur des bibliothèques de Montréal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACJ80lQU3R6Xf-s0aqSGzS84lZ3qn6Ij8&callback=initMap&libraries=places&v=weekly&map_ids=e0609e75ab711b8"
+      defer
+    ></script>
+    <script type="text/javascript" src="assets/json/mapstyling.json"></script>
+    <script type="text/javascript" src="assets/json/recyclingbin.json"></script>
+    <script type="text/javascript" src="assets/json/libraries.json"></script>
+    <script src="assets/js/resultsfromsearch.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/search.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <h1 id = "title">Localisateur des bibliothèques de Montréal</h1>
+    <p id = "paragraph">Bienvenue sur le localisateur des bibliothèques de Montréal! Vous pouvez sélectionner un arrondissement dans le menu déroulant ci-dessous.</p>
+    <div align="center" class = "custom-select">
+    <select id="neighborhood">
+      <option value="All neighborhoods" selected>All neighborhoods</option>
+      <option value="Ahuntsic-Cartierville">Ahuntsic-Cartierville</option>
+      <option value="Anjou">Anjou</option>
+      <option value="Côte-des-Neiges–Notre-Dame-de-Grâce">Côte-des-Neiges–Notre-Dame-de-Grâce</option>
+      <option value="Lachine">Lachine</option>
+      <option value="LaSalle">LaSalle</option>
+      <option value="Le Plateau-Mont-Royal">Le Plateau-Mont-Royal</option>
+      <option value="Le Sud-Ouest">Le Sud-Ouest</option>
+      <option value="L'Île-Bizard–Sainte-Geneviève">L'Île-Bizard–Sainte-Geneviève</option>
+      <option value="Mercier–Hochelaga-Maisonneuve">Mercier–Hochelaga-Maisonneuve</option>
+      <option value="Montréal-Nord">Montréal-Nord</option>
+      <option value="Outremont">Outremont</option>
+      <option value="Pierrefonds-Roxboro">Pierrefonds-Roxboro</option>
+      <option value="Rivière-des-Prairies–Pointe-aux-Trembles">Rivière-des-Prairies–Pointe-aux-Trembles</option>
+      <option value="Rosemont–La Petite-Patrie">Rosemont–La Petite-Patrie</option>
+      <option value="Saint-Laurent">Saint-Laurent</option>
+      <option value="Saint-Léonard">Saint-Léonard</option>
+      <option value="Verdun">Verdun</option>
+      <option value="Ville-Marie">Ville-Marie</option>
+      <option value="Villeray–Saint-Michel–Parc-Extension">Villeray–Saint-Michel–Parc-Extension</option>
+    </select>
+    </div>
+    <results-container>
+      <div id="map"></div>
+      <div id="listing">
+        <table id="resultsTable">
+          <tbody id="results"></tbody>
+        </table>
+      </div>
+    </results-container>
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">Address:</td>
+            <td id="iw-address"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">Telephone:</td>
+            <td id="iw-phone"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">Rating:</td>
+            <td id="iw-rating"></td>
+          </tr>
+          <tr id="iw-website-row" class="iw_table_row">
+            <td class="iw_attribute_name">Website:</td>
+            <td id="iw-website"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
